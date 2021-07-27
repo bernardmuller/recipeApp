@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const Menu = require('../models/menu')
 
-router.get('/', (req, res, next) => {
-    res.send('API is working properly');
+router.get('/', async(req, res) => {
+    const menus = await Menu.find({})
+    res.send(menus);
 });
 
 module.exports = router;

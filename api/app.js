@@ -11,9 +11,27 @@ const testAPIRouter = require('./routes/testAPI');
 
 const app = express();
 
+const mongoose = require('mongoose');
+
+const dbUrl = process.env.DBURL || 'mongodb://localhost:27017/menuApp';
+
+mongoose.connect(dbUrl, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+});
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'Connection Error:'));
+db.once('open', () => {
+    console.log('Database Connected...')
+});
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'ejs');
 
 
 app.use(logger('dev'));
