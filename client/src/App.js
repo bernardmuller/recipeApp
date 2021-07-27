@@ -1,31 +1,28 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, {useState, useEffect} from 'react'
 
+function App() {
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { apiResponse: "" };
-  }
+  const [menus, setMenus] = useState('');
 
-  callAPI() {
+  const callAPI = () => (
     fetch("http://localhost:9000/testAPI")
-        .then(res => res.text())
-        .then(res => this.setState({ apiResponse: res }))        
-  }
+        .then(res =>  res.text())
+        .then(res => setMenus(res))        
+  )
 
-  componentWillMount() {
-    this.callAPI();
-  }
+  useEffect(() => {
+    callAPI()
+  }, []);
 
-  render() {    
-    return (
-      <div className="App"> 
+  return (
+    <div className="App"> 
         <h1>client side</h1>     
-        <p>{this.state.apiResponse}</p>
+        <p>{menus}</p>
       </div>
-    );
-  }
+  )
 }
 
-export default App;
+export default App
+
+
+
