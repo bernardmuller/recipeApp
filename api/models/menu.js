@@ -5,10 +5,10 @@ const Schema = mongoose.Schema;
 const menuSchema = new Schema ({
     name: String,
     period: Number,
-    ingredientsList: [
+    meals: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Ingredient'
+            ref: 'Meals'
         }
     ]
 });

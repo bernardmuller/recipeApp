@@ -12,7 +12,7 @@ function App() {
 
 
   const fetchMenus = async() => {
-    const response = await Axios("http://localhost:9000/testAPI");
+    const response = await Axios("http://localhost:8080/testAPI");
     console.log(response.data) 
     setMenus(response.data)   
   }
