@@ -18,6 +18,25 @@ module.exports = [
             'Jam',
             'Cheese'
         ]
-    }
+    },
+    {
+        name: 'Nachos',
+        season: 'Summer',
+        instructions: 'Layer Nachos, cheese sauce and chicken, put in oven. Bam!',
+        image: 'https://unsplash.com/photos/aZOqcEK2KuQ',
+        URL: 'https://www.recipetineats.com/chicken-nachos-recipe/',
+        ingredients: [
+            'Nachos',
+            'Chicken',
+            'Sweet n sour sauce',
+            'cucumber',
+            'tomato',
+            'jelopeno',
+            'cheese',
+            'flour',
+            'milk',
+            'butter'
+        ]
+    },
 ]
 
