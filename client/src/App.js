@@ -12,9 +12,9 @@ function App() {
 
 
   const fetchMenus = async() => {
-    const response = await Axios("http://localhost:8080/testAPI");
+    const response = await Axios("http://localhost:8080/notion");
     console.log(response.data) 
-    setMenus(response.data)   
+    // setMenus(response.data)   
   }
 
   return (

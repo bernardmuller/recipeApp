@@ -9,6 +9,7 @@ const env = require('dotenv').config()
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const mealsRouter = require('./routes/meals');
+const menusRouter = require('./routes/menus');
 const notionRouter = require('./routes/notion');
 
 const notion = require('./routes/notion')
@@ -48,6 +49,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/meals', mealsRouter);
+app.use('/menus', menusRouter);
 app.use('/notion', notionRouter);
 
 // catch 404 and forward to error handler
